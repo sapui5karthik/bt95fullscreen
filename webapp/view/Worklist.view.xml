@@ -2,7 +2,7 @@
 	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar">
 	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
 		<semantic:titleHeading>
-			<Title text="SAP Color ProductSet"/>
+			<Title text="SAP Color ProductSet-Karthik"/>
 		</semantic:titleHeading>
 		<semantic:content>
 			<Panel>
