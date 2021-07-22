@@ -1,0 +1,11 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="zsapui5proj06fullscreen.ZSAPUI5_Proj06_FullScreen.controller.App"
+	displayBlock="true"
+	xmlns="sap.m">
+
+	<App id="app"
+		 busy="{appView>/busy}"
+		 busyIndicatorDelay="{appView>/delay}"/>
+
+</mvc:View>

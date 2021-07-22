@@ -1,0 +1,79 @@
+<mvc:View controllerName="zsapui5proj06fullscreen.ZSAPUI5_Proj06_FullScreen.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text="{i18n>worklistTitle}"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<Panel>
+				<content>
+					<Table id="table1" items="{path : 'sapprod>/'}" growing="true" growingThreshold="8" growingScrollToLoad="false">
+						<columns>
+							<Column>
+								<Text text="Product"/>
+							</Column>
+							<Column>
+								<Text text="Description"/>
+							</Column>
+							<Column>
+								<Text text="Dimensions"/>
+							</Column>
+							<Column>
+								<Text text="Date Delivered"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<VBox>
+										<items>
+											<ObjectStatus state="Success" text="{sapprod>ProductID}"/>
+											<ObjectStatus state="Warning"  text="{sapprod>TypeCode}"/>
+											<ObjectStatus state="Error"  text="{sapprod>Category}"/>
+											<ObjectStatus state="Warning" text="{sapprod>Name}"/>
+											<ObjectStatus state="Warning" text="{sapprod>NameLanguage}"/>
+										</items>
+									</VBox>
+									<VBox>
+										<items>
+											<ObjectStatus state="Success" text="{sapprod>Description}"/>
+											<ObjectStatus state="Warning" text="{sapprod>DescriptionLanguage}"/>
+											<ObjectStatus state="Indication02" inverted="true" text="{sapprod>SupplierID}"/>
+											<ObjectStatus state="Warning" text="{sapprod>SupplierName}"/>
+											<ObjectStatus state="Warning" text="{sapprod>TaxTarifCode}"/>
+										</items>
+									</VBox>
+									<VBox>
+										<items>
+											<ObjectStatus state="Success" text="{sapprod>WeightMeasure} {sapprod>WeightUnit}"/>
+											<ObjectStatus state="Warning"  text="{sapprod>MeasureUnit}"/>
+											<ObjectStatus state="Error"  text="{sapprod>Price}  {sapprod>CurrencyCode}"/>
+											<ObjectStatus state="Warning" text="{sapprod>Width} X {sapprod>Depth} X {sapprod>Height} {sapprod>DimUnit}"/>
+											<ObjectStatus state="Warning" text="{sapprod>}"/>
+										</items>
+									</VBox>
+									<VBox>
+										<items>
+											<ObjectStatus state="Success" text="{sapprod>CreatedAt}"/>
+											<ObjectStatus state="Warning"  text="{sapprod>ChangedAt}"/>
+											
+										</items>
+									</VBox>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Panel>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{worklistView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+	</semantic:SemanticPage>
+</mvc:View>
